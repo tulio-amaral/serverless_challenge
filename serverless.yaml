@@ -1,0 +1,16 @@
+service:
+  name: serverlesschallenge
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
