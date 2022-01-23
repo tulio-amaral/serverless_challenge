@@ -5,6 +5,8 @@
   "main": "serverless.ts",
   "scripts": {
     "dev": "serverless offline",
+    "dynamodb:start": "serverless dynamodb start",
+    "deploy": "sls deploy -v",
     "test": "jest"
   },
   "dependencies": {
