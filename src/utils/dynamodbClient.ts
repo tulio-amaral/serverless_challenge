@@ -6,7 +6,7 @@ const options = {
 }
 
 const isOffline = () => {
-  return process.env.IS_OFFLINE;
+  return true;
 }
 
 export const document = isOffline() 
