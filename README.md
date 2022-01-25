@@ -17,6 +17,7 @@ This project has been generated using the `aws-nodejs-typescript` template from 
 - Rode `yarn dynamodb:install` para instalar o dynamoDB localmente
 - Rode `yarn dynamodb:start` para iniciar o dynamoDB localmente
 - Rode `yarn dev` para inicializar o servidor localmente
+- Rode `yarn test` para inicializar os testes
 
 ## Chamando os end-points
 
