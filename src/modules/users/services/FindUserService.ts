@@ -2,10 +2,10 @@ import AppError from '../../../utils/AppError'
 import { document } from '../../../utils/dynamodbClient'
 
 class FindUserService {
-  public async execute(userId: string): Promise<any> {
+  public async execute({ userId, table_name = 'users' }): Promise<any> {
     const { Item: user } = await document
       .get({ 
-        TableName: 'users', 
+        TableName: table_name,
         Key: { id: userId } 
       })
       .promise()
@@ -18,4 +18,4 @@ class FindUserService {
   }
 }
 
-export default new FindUserService()
+export default FindUserService;

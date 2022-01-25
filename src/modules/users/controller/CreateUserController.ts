@@ -11,7 +11,9 @@ class CreateUserController {
       throw new AppError('All fields must be filled')
     }
 
-    await CreateUserService.execute({ name, age, role })
+    const createUserService = new CreateUserService();
+
+    await createUserService.execute({ name, age, role })
 
     return response.status(201).send();
   }

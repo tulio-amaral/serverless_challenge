@@ -12,7 +12,9 @@ class UpdateUserController {
       throw new AppError('All fields must be filled')
     }
 
-    const user = await UpdateUserService.execute({
+    const updateUserService = new UpdateUserService()
+
+    const user = await updateUserService.execute({
       userId,
       name, 
       age, 

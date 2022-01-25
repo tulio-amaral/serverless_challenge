@@ -4,9 +4,9 @@ import AppError from '../../../utils/AppError'
 import { User } from "../model/User";
 
 class UpdateUserService {
-  async execute({ userId, name, age, role }: UpdateUserDTO): Promise<any> {
+  async execute({ userId, name, age, role, table_name = 'users' }: UpdateUserDTO): Promise<any> {
     const { Item: findUser } = await document.get({
-      TableName: 'users',
+      TableName: table_name,
       Key: {
         id: userId
       }
@@ -18,7 +18,7 @@ class UpdateUserService {
 
     const user = await document
       .update({
-        TableName: 'users',
+        TableName: table_name,
         Key: {
           id: userId
         },
@@ -41,4 +41,4 @@ class UpdateUserService {
   }
 }
 
-export default new UpdateUserService();
+export default UpdateUserService;

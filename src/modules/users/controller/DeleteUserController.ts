@@ -5,7 +5,8 @@ class DeleteUserController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { userId } = request.params;
 
-    await DeleteUserService.execute(userId);
+    const deleteUserService = new DeleteUserService()
+    await deleteUserService.execute({ userId });
 
     return response.send();
   }

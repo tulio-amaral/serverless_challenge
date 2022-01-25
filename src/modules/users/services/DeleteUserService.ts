@@ -3,9 +3,9 @@ import AppError from '../../../utils/AppError'
 import { document } from '../../../utils/dynamodbClient'
 
 class DeleteUserService {
-  public async execute(userId: string): Promise<void> {
+  public async execute({ userId, table_name = 'users' }): Promise<void> {
     const { Item: findUser } = await document.get({
-      TableName: 'users',
+      TableName: table_name,
       Key: {
         id: userId
       }
@@ -24,4 +24,4 @@ class DeleteUserService {
   }
 }
 
-export default new DeleteUserService();
+export default DeleteUserService;

@@ -3,4 +3,5 @@ export type UpdateUserDTO = {
   name: string;
   age: number;
   role: string;
+  table_name?: string;
 }
